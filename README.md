@@ -30,3 +30,14 @@ docker run -it --rm -v $(pwd):/opt/nodejs \
 node:12-slim \
 node examples/001/hello.js 'Test001'
 ```
+
+On peut utiliser ce qui a été configuré dans `package.json` :
+
+```bash
+docker run -it --rm \
+-v $(pwd):/opt/nodejs \
+-w /opt/nodejs \
+-u 1000:1000 \
+node:12-slim \
+npm run 003_2
+```
