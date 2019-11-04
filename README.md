@@ -8,3 +8,25 @@
 1. Complete versions are on `master` branch.
 
 https://nodejs.org/docs/v6.9.1/api/
+
+# Running on docker
+
+Version 12 taggé comme `Active LTS (Erbium)`.
+
+```bash
+docker run -it --rm -v $(pwd):/opt/nodejs \
+-w /opt/nodejs \
+-u 1000:1000 \
+node:12-slim \
+npm install
+```
+
+Juste pour comprendre les args:
+
+```bash
+docker run -it --rm -v $(pwd):/opt/nodejs \
+-w /opt/nodejs \
+-u 1000:1000 \
+node:12-slim \
+node examples/001/hello.js 'Test001'
+```
